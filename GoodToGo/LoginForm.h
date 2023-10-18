@@ -47,11 +47,14 @@ namespace GoodToGo {
 	private: System::Windows::Forms::Label^ txtpassword;
 	private: System::Windows::Forms::CheckBox^ CheckbxShowPas;
 	private: System::Windows::Forms::Button^ BtnLogin;
+	private: System::Windows::Forms::Label^ txt;
 
-	private: System::Windows::Forms::Label^ label3;
+
 
 	private: System::Windows::Forms::Button^ BtnCancle;
-	private: System::Windows::Forms::LinkLabel^ linkLabel1;
+	private: System::Windows::Forms::LinkLabel^ Account_SignUp;
+
+
 
 
 
@@ -79,9 +82,9 @@ namespace GoodToGo {
 			this->txtpassword = (gcnew System::Windows::Forms::Label());
 			this->CheckbxShowPas = (gcnew System::Windows::Forms::CheckBox());
 			this->BtnLogin = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->txt = (gcnew System::Windows::Forms::Label());
 			this->BtnCancle = (gcnew System::Windows::Forms::Button());
-			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
+			this->Account_SignUp = (gcnew System::Windows::Forms::LinkLabel());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -121,6 +124,7 @@ namespace GoodToGo {
 			this->TbEmail_Login->Name = L"TbEmail_Login";
 			this->TbEmail_Login->Size = System::Drawing::Size(257, 36);
 			this->TbEmail_Login->TabIndex = 2;
+			this->TbEmail_Login->TextChanged += gcnew System::EventHandler(this, &LoginForm::TbEmail_Login_TextChanged);
 			// 
 			// TbPassword_Login
 			// 
@@ -135,6 +139,7 @@ namespace GoodToGo {
 			this->TbPassword_Login->PasswordChar = '*';
 			this->TbPassword_Login->Size = System::Drawing::Size(257, 36);
 			this->TbPassword_Login->TabIndex = 4;
+			this->TbPassword_Login->TextChanged += gcnew System::EventHandler(this, &LoginForm::TbPassword_Login_TextChanged);
 			// 
 			// txtpassword
 			// 
@@ -175,18 +180,18 @@ namespace GoodToGo {
 			this->BtnLogin->UseVisualStyleBackColor = false;
 			this->BtnLogin->Click += gcnew System::EventHandler(this, &LoginForm::button1_Click);
 			// 
-			// label3
+			// txt
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->txt->AutoSize = true;
+			this->txt->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(71, 451);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(209, 25);
-			this->label3->TabIndex = 7;
-			this->label3->Text = L"Don\'t Have an Account";
-			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label3->Click += gcnew System::EventHandler(this, &LoginForm::label3_Click);
+			this->txt->Location = System::Drawing::Point(71, 451);
+			this->txt->Name = L"txt";
+			this->txt->Size = System::Drawing::Size(209, 25);
+			this->txt->TabIndex = 7;
+			this->txt->Text = L"Don\'t Have an Account";
+			this->txt->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->txt->Click += gcnew System::EventHandler(this, &LoginForm::label3_Click);
 			// 
 			// BtnCancle
 			// 
@@ -199,27 +204,20 @@ namespace GoodToGo {
 			this->BtnCancle->Name = L"BtnCancle";
 			this->BtnCancle->Size = System::Drawing::Size(257, 41);
 			this->BtnCancle->TabIndex = 9;
-			this->BtnCancle->Text = L"CANCLE";
+			this->BtnCancle->Text = L"CANCEL";
 			this->BtnCancle->UseVisualStyleBackColor = false;
 			this->BtnCancle->Click += gcnew System::EventHandler(this, &LoginForm::button2_Click);
 			// 
-			// linkLabel1
+			// Account_SignUp
 			// 
-			this->linkLabel1->AutoSize = true;
-			this->linkLabel1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->linkLabel1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9, System::Drawing::FontStyle::Bold));
-			this->linkLabel1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)), static_cast<System::Int32>(static_cast<System::Byte>(86)),
-				static_cast<System::Int32>(static_cast<System::Byte>(174)));
-			this->linkLabel1->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)), static_cast<System::Int32>(static_cast<System::Byte>(86)),
-				static_cast<System::Int32>(static_cast<System::Byte>(174)));
-			this->linkLabel1->Location = System::Drawing::Point(94, 476);
-			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(143, 25);
-			this->linkLabel1->TabIndex = 10;
-			this->linkLabel1->TabStop = true;
-			this->linkLabel1->Text = L"Create Account";
-			this->linkLabel1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &LoginForm::linkLabel1_LinkClicked);
+			this->Account_SignUp->AutoSize = true;
+			this->Account_SignUp->Location = System::Drawing::Point(92, 476);
+			this->Account_SignUp->Name = L"Account_SignUp";
+			this->Account_SignUp->Size = System::Drawing::Size(157, 28);
+			this->Account_SignUp->TabIndex = 11;
+			this->Account_SignUp->TabStop = true;
+			this->Account_SignUp->Text = L"Create Account";
+			this->Account_SignUp->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &LoginForm::linkLabel2_LinkClicked);
 			// 
 			// LoginForm
 			// 
@@ -227,9 +225,9 @@ namespace GoodToGo {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(337, 551);
-			this->Controls->Add(this->linkLabel1);
+			this->Controls->Add(this->Account_SignUp);
 			this->Controls->Add(this->BtnCancle);
-			this->Controls->Add(this->label3);
+			this->Controls->Add(this->txt);
 			this->Controls->Add(this->BtnLogin);
 			this->Controls->Add(this->CheckbxShowPas);
 			this->Controls->Add(this->TbPassword_Login);
@@ -261,7 +259,7 @@ namespace GoodToGo {
 
 		public:User^ user = nullptr;
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ email = this->TbEmail_Login->Text;
+				String^ email = this->TbEmail_Login->Text;
 		String^ password = this->TbPassword_Login->Text;
 
 		if (email->Length == 0 || password->Length == 0) {
@@ -314,12 +312,16 @@ private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
-	public:bool switchToSignUp = false;
-private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-	this->switchToSignUp= true;
+private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+	 public:bool switchToSignUp = false;
+private: System::Void linkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	this->switchToSignUp = true;
 	this->Close();
 }
-private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void TbEmail_Login_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void TbPassword_Login_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
