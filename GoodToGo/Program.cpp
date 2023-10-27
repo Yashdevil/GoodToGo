@@ -1,44 +1,49 @@
-
-
 #include "LoginForm.h"
+#include "DasboardForm.h"
 #include "SignUpForm.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
 
-void main(array<String^>^ args)
+int main(array<String^>^ args)
 {
-	Application::EnableVisualStyles();
-	Application::SetCompatibleTextRenderingDefault(false);
-	User^ user = nullptr;
-	while (true) {
-		GoodToGo::LoginForm loginForm;
-		loginForm.ShowDialog();
-		if (loginForm.switchToSignUp) {
-			//show the register form
-			GoodToGo::SignUpForm SignupForm;
-			SignupForm.ShowDialog();
+    Application::EnableVisualStyles();
+    Application::SetCompatibleTextRenderingDefault(false);
 
-			if (SignupForm.switchToLogin)
-				continue;
+    User^ user = nullptr;
 
-			else {
-				user = SignupForm.user;
-				break;
-			}
-		}
-		else {
-			user = loginForm.user;
-			break;
-		}
+    // Create the login form
+    GoodToGo::LoginForm loginForm;
 
-		if (user != nullptr) {
-			MessageBox::Show("Successfull Authentication of " + user->Full_Name,
-				"Program. cpp", MessageBoxButtons::OK);
-		}
-		else {
-			MessageBox::Show("Authentication Canceled",
-				"Program. cpp", MessageBoxButtons::OK);
-		}
-	}
+    while (true) {
+        loginForm.ShowDialog();
+
+        if (loginForm.switchToSignUp) {
+            // Show the register form
+            GoodToGo::SignUpForm signupForm;
+            signupForm.ShowDialog();
+
+            if (signupForm.switchToLogin) {
+                continue;
+            }
+            else {
+                user = signupForm.user;
+                break;
+            }
+        }
+        else {
+            user = loginForm.user;
+            break;
+        }
+    }
+
+    if (user != nullptr) {
+        // Now, outside of the loop, create and run the dashboard form
+        GoodToGo::DasboardForm dashboardForm(user);
+        Application::Run(% dashboardForm);
+    }
+    else {
+    }
+
+    return 0;
 }

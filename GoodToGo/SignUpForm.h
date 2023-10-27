@@ -41,8 +41,9 @@ namespace GoodToGo {
 	protected:
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Button^ BtnSignUp;
+	private: System::Windows::Forms::CheckBox^ CheckbxShowPass;
 
-	private: System::Windows::Forms::CheckBox^ CheckbxShowPas;
+
 	private: System::Windows::Forms::TextBox^ TbPassword_SignUp;
 
 
@@ -93,7 +94,7 @@ namespace GoodToGo {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SignUpForm::typeid));
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->BtnSignUp = (gcnew System::Windows::Forms::Button());
-			this->CheckbxShowPas = (gcnew System::Windows::Forms::CheckBox());
+			this->CheckbxShowPass = (gcnew System::Windows::Forms::CheckBox());
 			this->TbPassword_SignUp = (gcnew System::Windows::Forms::TextBox());
 			this->txtpassword = (gcnew System::Windows::Forms::Label());
 			this->TbFullName_SignUp = (gcnew System::Windows::Forms::TextBox());
@@ -113,14 +114,18 @@ namespace GoodToGo {
 			// 
 			// label3
 			// 
+			this->label3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(80, 645);
+			this->label3->Location = System::Drawing::Point(80, 653);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(221, 25);
 			this->label3->TabIndex = 16;
 			this->label3->Text = L"Alredy have an Account ";
+			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// BtnSignUp
 			// 
@@ -129,7 +134,7 @@ namespace GoodToGo {
 			this->BtnSignUp->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->BtnSignUp->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->BtnSignUp->ForeColor = System::Drawing::Color::White;
-			this->BtnSignUp->Location = System::Drawing::Point(28, 590);
+			this->BtnSignUp->Location = System::Drawing::Point(28, 598);
 			this->BtnSignUp->Name = L"BtnSignUp";
 			this->BtnSignUp->Size = System::Drawing::Size(310, 43);
 			this->BtnSignUp->TabIndex = 15;
@@ -137,40 +142,39 @@ namespace GoodToGo {
 			this->BtnSignUp->UseVisualStyleBackColor = false;
 			this->BtnSignUp->Click += gcnew System::EventHandler(this, &SignUpForm::BtnSignUp_Click);
 			// 
-			// CheckbxShowPas
+			// CheckbxShowPass
 			// 
-			this->CheckbxShowPas->AutoSize = true;
-			this->CheckbxShowPas->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->CheckbxShowPas->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->CheckbxShowPas->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->CheckbxShowPass->AutoSize = true;
+			this->CheckbxShowPass->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->CheckbxShowPass->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->CheckbxShowPass->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CheckbxShowPas->Location = System::Drawing::Point(180, 543);
-			this->CheckbxShowPas->Name = L"CheckbxShowPas";
-			this->CheckbxShowPas->Size = System::Drawing::Size(163, 29);
-			this->CheckbxShowPas->TabIndex = 14;
-			this->CheckbxShowPas->Text = L"Show Password";
-			this->CheckbxShowPas->UseVisualStyleBackColor = true;
-			this->CheckbxShowPas->CheckedChanged += gcnew System::EventHandler(this, &SignUpForm::CheckbxShowPas_CheckedChanged);
+			this->CheckbxShowPass->Location = System::Drawing::Point(199, 552);
+			this->CheckbxShowPass->Name = L"CheckbxShowPass";
+			this->CheckbxShowPass->Size = System::Drawing::Size(163, 29);
+			this->CheckbxShowPass->TabIndex = 14;
+			this->CheckbxShowPass->Text = L"Show Password";
+			this->CheckbxShowPass->UseVisualStyleBackColor = true;
+			this->CheckbxShowPass->CheckedChanged += gcnew System::EventHandler(this, &SignUpForm::CheckbxShowPas_CheckedChanged);
 			// 
 			// TbPassword_SignUp
 			// 
 			this->TbPassword_SignUp->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)),
 				static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(233)));
 			this->TbPassword_SignUp->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->TbPassword_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TbPassword_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TbPassword_SignUp->Location = System::Drawing::Point(28, 430);
-			this->TbPassword_SignUp->Multiline = true;
+			this->TbPassword_SignUp->Location = System::Drawing::Point(28, 433);
 			this->TbPassword_SignUp->Name = L"TbPassword_SignUp";
 			this->TbPassword_SignUp->PasswordChar = '*';
-			this->TbPassword_SignUp->Size = System::Drawing::Size(310, 39);
+			this->TbPassword_SignUp->Size = System::Drawing::Size(310, 40);
 			this->TbPassword_SignUp->TabIndex = 13;
 			this->TbPassword_SignUp->TextChanged += gcnew System::EventHandler(this, &SignUpForm::textBox1_TextChanged);
 			// 
 			// txtpassword
 			// 
 			this->txtpassword->AutoSize = true;
-			this->txtpassword->Location = System::Drawing::Point(23, 399);
+			this->txtpassword->Location = System::Drawing::Point(23, 402);
 			this->txtpassword->Name = L"txtpassword";
 			this->txtpassword->Size = System::Drawing::Size(100, 28);
 			this->txtpassword->TabIndex = 12;
@@ -182,19 +186,18 @@ namespace GoodToGo {
 			this->TbFullName_SignUp->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)),
 				static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(233)));
 			this->TbFullName_SignUp->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->TbFullName_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TbFullName_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TbFullName_SignUp->Location = System::Drawing::Point(28, 122);
-			this->TbFullName_SignUp->Multiline = true;
+			this->TbFullName_SignUp->Location = System::Drawing::Point(28, 125);
 			this->TbFullName_SignUp->Name = L"TbFullName_SignUp";
-			this->TbFullName_SignUp->Size = System::Drawing::Size(310, 39);
+			this->TbFullName_SignUp->Size = System::Drawing::Size(310, 40);
 			this->TbFullName_SignUp->TabIndex = 11;
 			this->TbFullName_SignUp->TextChanged += gcnew System::EventHandler(this, &SignUpForm::txtemail_TextChanged);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(23, 91);
+			this->label2->Location = System::Drawing::Point(23, 94);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(108, 28);
 			this->label2->TabIndex = 10;
@@ -208,7 +211,7 @@ namespace GoodToGo {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)), static_cast<System::Int32>(static_cast<System::Byte>(86)),
 				static_cast<System::Int32>(static_cast<System::Byte>(174)));
-			this->label1->Location = System::Drawing::Point(21, 29);
+			this->label1->Location = System::Drawing::Point(21, 38);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(226, 40);
@@ -220,19 +223,18 @@ namespace GoodToGo {
 			this->TbEmail_SignUp->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)), static_cast<System::Int32>(static_cast<System::Byte>(231)),
 				static_cast<System::Int32>(static_cast<System::Byte>(233)));
 			this->TbEmail_SignUp->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->TbEmail_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TbEmail_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TbEmail_SignUp->Location = System::Drawing::Point(28, 196);
-			this->TbEmail_SignUp->Multiline = true;
+			this->TbEmail_SignUp->Location = System::Drawing::Point(28, 199);
 			this->TbEmail_SignUp->Name = L"TbEmail_SignUp";
-			this->TbEmail_SignUp->Size = System::Drawing::Size(310, 39);
+			this->TbEmail_SignUp->Size = System::Drawing::Size(310, 40);
 			this->TbEmail_SignUp->TabIndex = 21;
 			this->TbEmail_SignUp->TextChanged += gcnew System::EventHandler(this, &SignUpForm::textBox3_TextChanged);
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(23, 165);
+			this->label6->Location = System::Drawing::Point(23, 168);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(64, 28);
 			this->label6->TabIndex = 20;
@@ -244,19 +246,18 @@ namespace GoodToGo {
 			this->TbPhoneNumber_SignUp->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)),
 				static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(233)));
 			this->TbPhoneNumber_SignUp->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->TbPhoneNumber_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TbPhoneNumber_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TbPhoneNumber_SignUp->Location = System::Drawing::Point(28, 274);
-			this->TbPhoneNumber_SignUp->Multiline = true;
+			this->TbPhoneNumber_SignUp->Location = System::Drawing::Point(28, 277);
 			this->TbPhoneNumber_SignUp->Name = L"TbPhoneNumber_SignUp";
-			this->TbPhoneNumber_SignUp->Size = System::Drawing::Size(310, 39);
+			this->TbPhoneNumber_SignUp->Size = System::Drawing::Size(310, 40);
 			this->TbPhoneNumber_SignUp->TabIndex = 23;
 			this->TbPhoneNumber_SignUp->TextChanged += gcnew System::EventHandler(this, &SignUpForm::textBox4_TextChanged);
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(23, 243);
+			this->label7->Location = System::Drawing::Point(23, 246);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(154, 28);
 			this->label7->TabIndex = 22;
@@ -268,19 +269,18 @@ namespace GoodToGo {
 			this->TbRoomNumber_SignUp->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)),
 				static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(233)));
 			this->TbRoomNumber_SignUp->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->TbRoomNumber_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TbRoomNumber_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TbRoomNumber_SignUp->Location = System::Drawing::Point(28, 352);
-			this->TbRoomNumber_SignUp->Multiline = true;
+			this->TbRoomNumber_SignUp->Location = System::Drawing::Point(28, 355);
 			this->TbRoomNumber_SignUp->Name = L"TbRoomNumber_SignUp";
-			this->TbRoomNumber_SignUp->Size = System::Drawing::Size(310, 39);
+			this->TbRoomNumber_SignUp->Size = System::Drawing::Size(310, 40);
 			this->TbRoomNumber_SignUp->TabIndex = 25;
 			this->TbRoomNumber_SignUp->TextChanged += gcnew System::EventHandler(this, &SignUpForm::textBox5_TextChanged);
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(23, 321);
+			this->label8->Location = System::Drawing::Point(23, 324);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(149, 28);
 			this->label8->TabIndex = 24;
@@ -292,19 +292,19 @@ namespace GoodToGo {
 			this->TbConfirmPassword_SignUp->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)),
 				static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(233)));
 			this->TbConfirmPassword_SignUp->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->TbConfirmPassword_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TbConfirmPassword_SignUp->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TbConfirmPassword_SignUp->Location = System::Drawing::Point(28, 503);
-			this->TbConfirmPassword_SignUp->Multiline = true;
+			this->TbConfirmPassword_SignUp->Location = System::Drawing::Point(28, 506);
 			this->TbConfirmPassword_SignUp->Name = L"TbConfirmPassword_SignUp";
 			this->TbConfirmPassword_SignUp->PasswordChar = '*';
-			this->TbConfirmPassword_SignUp->Size = System::Drawing::Size(310, 39);
+			this->TbConfirmPassword_SignUp->Size = System::Drawing::Size(310, 40);
 			this->TbConfirmPassword_SignUp->TabIndex = 27;
+			this->TbConfirmPassword_SignUp->TextChanged += gcnew System::EventHandler(this, &SignUpForm::TbConfirmPassword_SignUp_TextChanged);
 			// 
 			// TbConfirmPassword
 			// 
 			this->TbConfirmPassword->AutoSize = true;
-			this->TbConfirmPassword->Location = System::Drawing::Point(23, 472);
+			this->TbConfirmPassword->Location = System::Drawing::Point(23, 475);
 			this->TbConfirmPassword->Name = L"TbConfirmPassword";
 			this->TbConfirmPassword->Size = System::Drawing::Size(182, 28);
 			this->TbConfirmPassword->TabIndex = 26;
@@ -312,20 +312,29 @@ namespace GoodToGo {
 			// 
 			// llLogin
 			// 
+			this->llLogin->ActiveLinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)), static_cast<System::Int32>(static_cast<System::Byte>(86)),
+				static_cast<System::Int32>(static_cast<System::Byte>(177)));
+			this->llLogin->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->llLogin->AutoSize = true;
 			this->llLogin->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->llLogin->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->llLogin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)), static_cast<System::Int32>(static_cast<System::Byte>(86)),
 				static_cast<System::Int32>(static_cast<System::Byte>(174)));
+			this->llLogin->LinkBehavior = System::Windows::Forms::LinkBehavior::HoverUnderline;
 			this->llLogin->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)), static_cast<System::Int32>(static_cast<System::Byte>(86)),
 				static_cast<System::Int32>(static_cast<System::Byte>(174)));
-			this->llLogin->Location = System::Drawing::Point(115, 669);
+			this->llLogin->Location = System::Drawing::Point(115, 677);
 			this->llLogin->Name = L"llLogin";
 			this->llLogin->Size = System::Drawing::Size(136, 25);
 			this->llLogin->TabIndex = 28;
 			this->llLogin->TabStop = true;
 			this->llLogin->Text = L"Back to LOGIN";
+			this->llLogin->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->llLogin->VisitedLinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)), static_cast<System::Int32>(static_cast<System::Byte>(86)),
+				static_cast<System::Int32>(static_cast<System::Byte>(177)));
 			this->llLogin->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &SignUpForm::llLogin_LinkClicked);
 			// 
 			// Btn_Cancle
@@ -333,9 +342,9 @@ namespace GoodToGo {
 			this->Btn_Cancle->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->Btn_Cancle->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_Cancle.BackgroundImage")));
 			this->Btn_Cancle->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->Btn_Cancle->Location = System::Drawing::Point(326, 12);
+			this->Btn_Cancle->Location = System::Drawing::Point(340, 10);
 			this->Btn_Cancle->Name = L"Btn_Cancle";
-			this->Btn_Cancle->Size = System::Drawing::Size(36, 35);
+			this->Btn_Cancle->Size = System::Drawing::Size(22, 23);
 			this->Btn_Cancle->TabIndex = 29;
 			this->Btn_Cancle->UseVisualStyleBackColor = false;
 			this->Btn_Cancle->Click += gcnew System::EventHandler(this, &SignUpForm::Btn_Cancle_Click);
@@ -358,7 +367,7 @@ namespace GoodToGo {
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->BtnSignUp);
-			this->Controls->Add(this->CheckbxShowPas);
+			this->Controls->Add(this->CheckbxShowPass);
 			this->Controls->Add(this->TbPassword_SignUp);
 			this->Controls->Add(this->txtpassword);
 			this->Controls->Add(this->TbFullName_SignUp);
@@ -382,6 +391,14 @@ namespace GoodToGo {
 	private: System::Void SignUpForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void CheckbxShowPas_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (CheckbxShowPass->Checked) {
+		TbPassword_SignUp->PasswordChar = '\0';  
+		TbConfirmPassword_SignUp->PasswordChar = '\0';  
+	}
+	else {
+		TbPassword_SignUp->PasswordChar = '*';
+		TbConfirmPassword_SignUp->PasswordChar = '*';  
+	}
 }
 private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -400,6 +417,7 @@ private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	TbPassword_SignUp->UseSystemPasswordChar = CheckbxShowPass->Checked;
 }
 private: System::Void txtpassword_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -410,7 +428,7 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void Btn_Cancle_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
+	System::Environment::Exit(0);
 }
 
 	public: bool switchToLogin = false;
@@ -471,6 +489,9 @@ private: System::Void BtnSignUp_Click(System::Object^ sender, System::EventArgs^
 		"Register Failure", MessageBoxButtons::OK);
 	}
 
+}
+private: System::Void TbConfirmPassword_SignUp_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	TbConfirmPassword_SignUp->UseSystemPasswordChar = CheckbxShowPass->Checked;
 }
 };
 }
