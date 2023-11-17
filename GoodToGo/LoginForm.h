@@ -57,6 +57,7 @@ namespace GoodToGo {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ BtnClear;
 	private: System::Windows::Forms::Button^ Btn_Cancle;
+	private: System::Windows::Forms::Button^ BtnMinimize;
 
 
 
@@ -95,6 +96,7 @@ namespace GoodToGo {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->BtnClear = (gcnew System::Windows::Forms::Button());
 			this->Btn_Cancle = (gcnew System::Windows::Forms::Button());
+			this->BtnMinimize = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -198,12 +200,13 @@ namespace GoodToGo {
 			this->Account_SignUp->LinkBehavior = System::Windows::Forms::LinkBehavior::HoverUnderline;
 			this->Account_SignUp->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)), static_cast<System::Int32>(static_cast<System::Byte>(86)),
 				static_cast<System::Int32>(static_cast<System::Byte>(174)));
-			this->Account_SignUp->Location = System::Drawing::Point(111, 479);
+			this->Account_SignUp->Location = System::Drawing::Point(118, 479);
 			this->Account_SignUp->Name = L"Account_SignUp";
 			this->Account_SignUp->Size = System::Drawing::Size(126, 21);
 			this->Account_SignUp->TabIndex = 11;
 			this->Account_SignUp->TabStop = true;
 			this->Account_SignUp->Text = L"Create Account";
+			this->Account_SignUp->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->Account_SignUp->VisitedLinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)),
 				static_cast<System::Int32>(static_cast<System::Byte>(86)), static_cast<System::Int32>(static_cast<System::Byte>(177)));
 			this->Account_SignUp->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &LoginForm::linkLabel2_LinkClicked);
@@ -211,11 +214,14 @@ namespace GoodToGo {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(67, 451);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(75, 447);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(231, 28);
+			this->label4->Size = System::Drawing::Size(278, 32);
 			this->label4->TabIndex = 13;
 			this->label4->Text = L"Don\'t Have an Account";
+			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->label4->Click += gcnew System::EventHandler(this, &LoginForm::label4_Click);
 			// 
 			// BtnClear
@@ -237,13 +243,29 @@ namespace GoodToGo {
 			// 
 			this->Btn_Cancle->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->Btn_Cancle->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_Cancle.BackgroundImage")));
-			this->Btn_Cancle->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Btn_Cancle->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->Btn_Cancle->FlatAppearance->BorderSize = 0;
+			this->Btn_Cancle->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Btn_Cancle->Location = System::Drawing::Point(304, 9);
 			this->Btn_Cancle->Name = L"Btn_Cancle";
 			this->Btn_Cancle->Size = System::Drawing::Size(22, 23);
 			this->Btn_Cancle->TabIndex = 30;
 			this->Btn_Cancle->UseVisualStyleBackColor = false;
 			this->Btn_Cancle->Click += gcnew System::EventHandler(this, &LoginForm::Btn_Cancle_Click_1);
+			// 
+			// BtnMinimize
+			// 
+			this->BtnMinimize->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BtnMinimize.BackgroundImage")));
+			this->BtnMinimize->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->BtnMinimize->Cursor = System::Windows::Forms::Cursors::Default;
+			this->BtnMinimize->FlatAppearance->BorderSize = 0;
+			this->BtnMinimize->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->BtnMinimize->Location = System::Drawing::Point(277, 10);
+			this->BtnMinimize->Name = L"BtnMinimize";
+			this->BtnMinimize->Size = System::Drawing::Size(22, 23);
+			this->BtnMinimize->TabIndex = 31;
+			this->BtnMinimize->UseVisualStyleBackColor = true;
+			this->BtnMinimize->Click += gcnew System::EventHandler(this, &LoginForm::BtnMinimize_Click);
 			// 
 			// LoginForm
 			// 
@@ -252,6 +274,7 @@ namespace GoodToGo {
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->ClientSize = System::Drawing::Size(337, 551);
+			this->Controls->Add(this->BtnMinimize);
 			this->Controls->Add(this->Btn_Cancle);
 			this->Controls->Add(this->BtnClear);
 			this->Controls->Add(this->label4);
@@ -268,6 +291,7 @@ namespace GoodToGo {
 			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(164)), static_cast<System::Int32>(static_cast<System::Byte>(165)),
 				static_cast<System::Int32>(static_cast<System::Byte>(169)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"LoginForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -368,6 +392,9 @@ private: System::Void Btn_Cancle_Click_1(System::Object^ sender, System::EventAr
 	
 }
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void BtnMinimize_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->WindowState = FormWindowState::Minimized;
 }
 };
 }

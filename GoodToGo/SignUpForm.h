@@ -74,6 +74,7 @@ namespace GoodToGo {
 	private: System::Windows::Forms::Label^ TbConfirmPassword;
 	private: System::Windows::Forms::LinkLabel^ llLogin;
 	private: System::Windows::Forms::Button^ Btn_Cancle;
+	private: System::Windows::Forms::Button^ BtnMinimize;
 
 
 
@@ -110,6 +111,7 @@ namespace GoodToGo {
 			this->TbConfirmPassword = (gcnew System::Windows::Forms::Label());
 			this->llLogin = (gcnew System::Windows::Forms::LinkLabel());
 			this->Btn_Cancle = (gcnew System::Windows::Forms::Button());
+			this->BtnMinimize = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label3
@@ -342,6 +344,8 @@ namespace GoodToGo {
 			this->Btn_Cancle->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->Btn_Cancle->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_Cancle.BackgroundImage")));
 			this->Btn_Cancle->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->Btn_Cancle->FlatAppearance->BorderSize = 0;
+			this->Btn_Cancle->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Btn_Cancle->Location = System::Drawing::Point(340, 10);
 			this->Btn_Cancle->Name = L"Btn_Cancle";
 			this->Btn_Cancle->Size = System::Drawing::Size(22, 23);
@@ -349,12 +353,27 @@ namespace GoodToGo {
 			this->Btn_Cancle->UseVisualStyleBackColor = false;
 			this->Btn_Cancle->Click += gcnew System::EventHandler(this, &SignUpForm::Btn_Cancle_Click);
 			// 
+			// BtnMinimize
+			// 
+			this->BtnMinimize->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BtnMinimize.BackgroundImage")));
+			this->BtnMinimize->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->BtnMinimize->Cursor = System::Windows::Forms::Cursors::Default;
+			this->BtnMinimize->FlatAppearance->BorderSize = 0;
+			this->BtnMinimize->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->BtnMinimize->Location = System::Drawing::Point(312, 11);
+			this->BtnMinimize->Name = L"BtnMinimize";
+			this->BtnMinimize->Size = System::Drawing::Size(22, 23);
+			this->BtnMinimize->TabIndex = 32;
+			this->BtnMinimize->UseVisualStyleBackColor = true;
+			this->BtnMinimize->Click += gcnew System::EventHandler(this, &SignUpForm::BtnMinimize_Click);
+			// 
 			// SignUpForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 28);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(374, 745);
+			this->Controls->Add(this->BtnMinimize);
 			this->Controls->Add(this->Btn_Cancle);
 			this->Controls->Add(this->llLogin);
 			this->Controls->Add(this->TbConfirmPassword_SignUp);
@@ -378,6 +397,7 @@ namespace GoodToGo {
 			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(164)), static_cast<System::Int32>(static_cast<System::Byte>(165)),
 				static_cast<System::Int32>(static_cast<System::Byte>(169)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"SignUpForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -492,6 +512,9 @@ private: System::Void BtnSignUp_Click(System::Object^ sender, System::EventArgs^
 }
 private: System::Void TbConfirmPassword_SignUp_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	TbConfirmPassword_SignUp->UseSystemPasswordChar = CheckbxShowPass->Checked;
+}
+private: System::Void BtnMinimize_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->WindowState = FormWindowState::Minimized;
 }
 };
 }

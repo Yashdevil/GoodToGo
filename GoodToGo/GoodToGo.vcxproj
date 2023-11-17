@@ -116,13 +116,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI2">
-      <HintPath>..\..\..\..\OneDrive\Desktop\Guna.UI2\Guna.UI2.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
